@@ -13,20 +13,40 @@ body {
     margin: 0;
     padding: 10px;
     box-sizing: border-box;
+    position: relative;
+}
+
+/* Top-left NGL box */
+.ngl-box {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #4a90e2;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.ngl-box:hover {
+    background-color: #357abd;
+    transform: scale(1.05);
 }
 
 /* Buttons */
 button {
-    padding: 10px 20px;
+    padding: 12px 25px;
     margin: 10px;
     background-color: crimson;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     flex: 1;
-    max-width: 120px;
+    max-width: 140px;
 }
 
 button:hover {
@@ -44,7 +64,7 @@ button:hover {
 /* Mail (envelope) */
 .mail-box {
     width: 90%;
-    max-width: 350px;
+    max-width: 400px;
     max-height: 0;
     opacity: 0;
     overflow: hidden;
@@ -55,7 +75,7 @@ button:hover {
     transition: all 0.6s ease;
     position: relative;
     margin-top: 20px;
-    padding: 0 10px;
+    padding: 0 15px;
     box-sizing: border-box;
 }
 
@@ -63,7 +83,7 @@ button:hover {
 #mail:target {
     max-height: 500px;
     opacity: 1;
-    padding: 20px 10px;
+    padding: 25px 15px;
 }
 
 /* Envelope top flap */
@@ -73,26 +93,26 @@ button:hover {
     height: 0;
     border-left: 50% solid transparent;
     border-right: 50% solid transparent;
-    border-bottom: 40px solid crimson;
+    border-bottom: 50px solid crimson;
     position: absolute;
-    top: -40px;
+    top: -50px;
     left: 0;
 }
 
 /* Confession text */
 .confess-text {
-    font-size: 4vw; /* responsive font size */
-    margin: 20px 0;
+    font-size: 6vw; /* bigger responsive font size */
+    margin: 25px 0;
     line-height: 1.4;
 }
 
 /* Hearts inside */
 .heart {
     color: red;
-    font-size: 6vw; /* responsive heart size */
+    font-size: 10vw; /* bigger responsive hearts */
     animation: heartbeat 1s infinite;
     display: inline-block;
-    margin: 0 3px;
+    margin: 0 5px;
 }
 
 /* Heart pulse animation */
@@ -107,20 +127,27 @@ button:hover {
 /* Responsive adjustments for very small screens */
 @media (max-width: 400px) {
     .confess-text {
-        font-size: 5vw;
+        font-size: 7vw;
     }
     .heart {
-        font-size: 8vw;
+        font-size: 12vw;
     }
     button {
-        max-width: 100px;
-        padding: 8px 15px;
+        max-width: 120px;
+        padding: 10px 18px;
+        font-size: 16px;
+    }
+    .ngl-box {
+        padding: 8px 12px;
         font-size: 14px;
     }
 }
 </style>
 </head>
 <body>
+
+<!-- NGL link box -->
+<a href="https://ngl.link/pablo32453" target="_blank" class="ngl-box">Sl b men💌</a>
 
 <h2>kon ng cute mes 💌</h2>
 
