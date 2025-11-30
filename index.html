@@ -10,22 +10,24 @@ body {
     margin: 0;
     padding: 10px;
     box-sizing: border-box;
+    text-align: center;
     position: relative;
 }
 
 /* Top-left NGL link box */
 .ngl-box {
-    position: fixed; /* fixed so it always stays in viewport */
+    position: fixed; /* stays visible */
     top: 15px;
     left: 15px;
     background-color: #4a90e2;
     color: white;
-    padding: 12px 18px;
+    padding: 10px 16px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
+    font-size: 14px;
     transition: transform 0.2s, background-color 0.2s;
-    z-index: 1000; /* make sure it’s on top */
+    z-index: 1000;
 }
 
 .ngl-box:hover {
@@ -33,37 +35,35 @@ body {
     transform: scale(1.05);
 }
 
-/* Center container */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 80px; /* give space for fixed NGL link */
+/* Heading outside the mail */
+h2 {
+    font-size: 2.2rem; /* readable, not too big */
+    margin: 50px 0 20px 0;
 }
 
 /* Buttons */
 button {
-    padding: 14px 28px;
+    padding: 12px 24px;
     margin: 12px;
     background-color: crimson;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 1.2rem;
     max-width: 160px;
+    transition: transform 0.2s;
 }
 
 button:hover {
     background-color: darkred;
+    transform: scale(1.05);
 }
 
 /* Mail (envelope) */
 .mail-box {
     width: 90%;
-    max-width: 450px;
+    max-width: 400px;
     max-height: 0;
     opacity: 0;
     overflow: hidden;
@@ -72,17 +72,17 @@ button:hover {
     border-radius: 15px;
     text-align: center;
     transition: all 0.6s ease;
-    position: relative;
-    margin-top: 20px;
+    margin: 20px auto;
     padding: 0 15px;
     box-sizing: border-box;
+    position: relative;
 }
 
 /* Show mail when targeted */
 #mail:target {
-    max-height: 600px;
+    max-height: 500px;
     opacity: 1;
-    padding: 30px 15px;
+    padding: 25px 15px;
 }
 
 /* Envelope flap */
@@ -92,23 +92,23 @@ button:hover {
     height: 0;
     border-left: 50% solid transparent;
     border-right: 50% solid transparent;
-    border-bottom: 60px solid crimson;
+    border-bottom: 50px solid crimson;
     position: absolute;
-    top: -60px;
+    top: -50px;
     left: 0;
 }
 
-/* Confession text */
+/* Confession text inside mail */
 .confess-text {
-    font-size: 24vw; /* very large, responsive text */
-    margin: 30px 0;
-    line-height: 1.2;
+    font-size: 1.1rem;
+    margin: 25px 0;
+    line-height: 1.4;
 }
 
-/* Hearts */
+/* Hearts inside mail */
 .heart {
     color: red;
-    font-size: 40vw; /* extra large hearts */
+    font-size: 2rem;
     animation: heartbeat 1s infinite;
     display: inline-block;
     margin: 0 5px;
@@ -123,22 +123,25 @@ button:hover {
     100% { transform: scale(1); }
 }
 
-/* Responsive adjustments for mobile */
+/* Responsive adjustments */
 @media (max-width: 500px) {
-    .confess-text {
-        font-size: 40vw;
-    }
-    .heart {
-        font-size: 60vw;
+    h2 {
+        font-size: 1.8rem;
     }
     button {
+        font-size: 1rem;
+        padding: 10px 20px;
         max-width: 140px;
-        font-size: 18px;
-        padding: 12px 22px;
     }
     .ngl-box {
-        padding: 10px 14px;
-        font-size: 14px;
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+    .confess-text {
+        font-size: 1rem;
+    }
+    .heart {
+        font-size: 1.8rem;
     }
 }
 </style>
@@ -146,25 +149,26 @@ button:hover {
 <body>
 
 <!-- Top-left NGL link -->
-<a href="https://ngl.link/pablo32453" target="_blank" class="ngl-box">Sl b men💌</a>
+<a href="https://ngl.link/pablo32453" target="_blank" class="ngl-box">Sl b men 💌</a>
 
-<div class="container">
-    <h2>kon ng cute mes 💌</h2>
+<!-- Heading outside the mail -->
+<h2>kon ng cute mes 💌</h2>
 
-    <div class="buttons">
-        <a href="#mail"><button>Open</button></a>
-        <a href="#"><button>Close</button></a>
-    </div>
+<!-- Buttons -->
+<div class="buttons">
+    <a href="#mail"><button>Open</button></a>
+    <a href="#"><button>Close</button></a>
+</div>
 
-    <div id="mail" class="mail-box">
-        <div class="confess-text">
-            💖oy ta see muk u besdong lot klang mg…  
-            <br>heheheheheheheh! 💖  
-            <div>
-                <span class="heart">❤️</span>
-                <span class="heart">💖</span>
-                <span class="heart">❤️</span>
-            </div>
+<!-- Mail box -->
+<div id="mail" class="mail-box">
+    <div class="confess-text">
+        💖oy ta see muk u besdong lot klang mg…  
+        <br>heheheheheheheh! 💖  
+        <div>
+            <span class="heart">❤️</span>
+            <span class="heart">💖</span>
+            <span class="heart">❤️</span>
         </div>
     </div>
 </div>
