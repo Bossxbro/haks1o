@@ -9,8 +9,10 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 /* Buttons */
@@ -23,15 +25,26 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    flex: 1;
+    max-width: 120px;
 }
 
 button:hover {
     background-color: darkred;
 }
 
+/* Buttons container */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
 /* Mail (envelope) */
 .mail-box {
-    width: 320px;
+    width: 90%;
+    max-width: 350px;
     max-height: 0;
     opacity: 0;
     overflow: hidden;
@@ -42,14 +55,15 @@ button:hover {
     transition: all 0.6s ease;
     position: relative;
     margin-top: 20px;
-    padding: 0 20px;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 /* Show the mail when targeted */
 #mail:target {
-    max-height: 400px;
+    max-height: 500px;
     opacity: 1;
-    padding: 20px;
+    padding: 20px 10px;
 }
 
 /* Envelope top flap */
@@ -57,8 +71,8 @@ button:hover {
     content: "";
     width: 0;
     height: 0;
-    border-left: 160px solid transparent;
-    border-right: 160px solid transparent;
+    border-left: 50% solid transparent;
+    border-right: 50% solid transparent;
     border-bottom: 40px solid crimson;
     position: absolute;
     top: -40px;
@@ -67,14 +81,15 @@ button:hover {
 
 /* Confession text */
 .confess-text {
-    font-size: 18px;
+    font-size: 4vw; /* responsive font size */
     margin: 20px 0;
+    line-height: 1.4;
 }
 
 /* Hearts inside */
 .heart {
     color: red;
-    font-size: 24px;
+    font-size: 6vw; /* responsive heart size */
     animation: heartbeat 1s infinite;
     display: inline-block;
     margin: 0 3px;
@@ -89,11 +104,19 @@ button:hover {
     100% { transform: scale(1); }
 }
 
-/* Buttons container */
-.buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+/* Responsive adjustments for very small screens */
+@media (max-width: 400px) {
+    .confess-text {
+        font-size: 5vw;
+    }
+    .heart {
+        font-size: 8vw;
+    }
+    button {
+        max-width: 100px;
+        padding: 8px 15px;
+        font-size: 14px;
+    }
 }
 </style>
 </head>
